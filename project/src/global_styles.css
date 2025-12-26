@@ -4,7 +4,15 @@
 
 @layer base {
   body {
-    @apply antialiased;
+    @apply antialiased text-slate-800;
+  }
+
+  h1 {
+    @apply leading-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
   }
 }
 
@@ -14,18 +22,36 @@
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-sky-600 text-white font-semibold rounded-lg hover:bg-sky-700 transition-colors duration-200;
+    @apply px-6 py-3 bg-sky-600 text-white font-semibold rounded-lg
+           hover:bg-sky-700 transition-colors duration-200;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-slate-200 text-slate-900 font-semibold rounded-lg hover:bg-slate-300 transition-colors duration-200;
+    @apply px-6 py-3 bg-slate-200 text-slate-900 font-semibold rounded-lg
+           hover:bg-slate-300 transition-colors duration-200;
   }
 
   .card {
-    @apply bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300;
+    @apply bg-white rounded-xl shadow-sm transition-shadow duration-300;
   }
 
   .text-gradient {
     @apply bg-gradient-to-r from-sky-600 to-blue-600 bg-clip-text text-transparent;
+  }
+
+  .input {
+    @apply w-full px-4 py-3 border border-slate-300 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-sky-600
+           focus:border-transparent transition;
+  }
+
+  .nav-link {
+    @apply text-slate-600 font-medium hover:text-slate-900 transition-colors;
+  }
+}
+
+@media (hover: hover) {
+  .card:hover {
+    @apply shadow-lg;
   }
 }

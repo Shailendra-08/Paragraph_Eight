@@ -10,28 +10,31 @@ import { BlogPost } from '../models/blog.model';
   template: `
     <article class="card overflow-hidden">
       <a [routerLink]="['/blog', post.id]" class="block group">
-        <div class="relative h-60 overflow-hidden">
+        <div class="relative h-48 sm:h-56 md:h-60 overflow-hidden">
           <img
             [src]="post.imageUrl"
             [alt]="post.title"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          <div class="absolute top-4 left-4 bg-sky-600 text-white px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider">
+          <div class="absolute top-3 left-3 bg-sky-600 text-white px-3 py-1 rounded-lg text-xs font-bold uppercase">
             {{ post.category }}
           </div>
         </div>
-        <div class="p-6">
-          <h2 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-sky-600 transition-colors line-clamp-2">
+
+        <div class="p-4 sm:p-6">
+          <h2 class="text-lg sm:text-xl font-bold text-slate-900 mb-2 line-clamp-2">
             {{ post.title }}
           </h2>
-          <p class="text-slate-600 text-sm mb-4 line-clamp-3">
+
+          <p class="text-sm sm:text-base text-slate-600 mb-3 line-clamp-3">
             {{ post.excerpt }}
           </p>
-          <div class="flex items-center gap-2 text-xs text-slate-500">
+
+          <div class="flex flex-wrap gap-x-2 gap-y-1 text-xs text-slate-500">
             <span class="font-semibold text-slate-700">{{ post.author }}</span>
-            <span class="text-slate-300">•</span>
-            <span>{{ post.date | date: 'MMM d, yyyy' }}</span>
-            <span class="text-slate-300">•</span>
+            <span>•</span>
+            <span>{{ post.date | date:'MMM d, yyyy' }}</span>
+            <span>•</span>
             <span>{{ post.readTime }} min</span>
           </div>
         </div>
